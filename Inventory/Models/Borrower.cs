@@ -17,7 +17,7 @@ namespace Inventory.Models
         public string Lastname { get; set; }
         public string Middlename { get; set; }
         public string Department { get; set; }
-        public DateTime Date_Borrowed { get; set; }
+        public DateTime Date_Borrowed { get; set; } = DateTime.Now;
         public string Status { get; set; }
         public string Remarks { get; set; }
         public string Head { get; set; }
@@ -25,7 +25,6 @@ namespace Inventory.Models
 
         public void Save()
         {
-            if (GetBorrowerBySerial(Serial_No) != null) throw new Level1Exception("Borrower already exists");
             using (var cmd = CreateCommand("INSERT INTO tblBorrowers (Serial_No, Item, Firstname, Lastname, Middlename, Department, Date_Borrowed, Status, Remarks, Head, Lab_Assistant) VALUES (@p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11)"))
             {
                 BindParameters(cmd, Serial_No, Item, Firstname, Lastname, Middlename, Department, Date_Borrowed, Status, Remarks, Head, Lab_Assistant);
@@ -37,9 +36,9 @@ namespace Inventory.Models
 
         public void Update()
         {
-            using (var cmd = CreateCommand("UPDATE tblBorrowers SET Item = @p1, Firstname = @p2, Lastname = @p3, Middlename = @p4, Department = @p5, Status = @p6, Remarks = @p7, Head = @p8, Lab_Assistant = @p9 WHERE Serial_No"))
+            using (var cmd = CreateCommand("UPDATE tblBorrowers SET Item = @p1, Firstname = @p2, Lastname = @p3, Middlename = @p4, Department = @p5, Status = @p6, Remarks = @p7, Head = @p8, Lab_Assistant = @p9 WHERE Serial_No = @p10"))
             {
-                BindParameters(cmd, Item, Firstname, Lastname, Middlename, Department, Status, Remarks, Head, Lab_Assistant);
+                BindParameters(cmd, Item, Firstname, Lastname, Middlename, Department, Status, Remarks, Head, Lab_Assistant, Serial_No);
                 GetConnection();
                 cmd.ExecuteNonQuery(); 
                 GetConnectionClose();
@@ -48,8 +47,8 @@ namespace Inventory.Models
 
         public static Borrower GetBorrowerBySerial(string serial)
         {
-            var borrower = new Borrower();
-            using (var cmd = CreateCommand("SELECT * FROM tblBorrowers WHERE Serial_No = @p1"))
+            Borrower borrower = null;
+            using (var cmd = CreateCommand("SELECT * FROM tblBorrowers WHERE Serial_No= @p1"))
             {
                 BindParameters(cmd, serial);
                 GetConnection();
@@ -69,6 +68,21 @@ namespace Inventory.Models
             {
                 GetConnection();
                 using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read()) borrowers.Add(ConvertReaderToBorrower(reader));
+                }
+                GetConnectionClose();
+            }
+            return borrowers;
+        }
+
+        public static List<Borrower> GetAllBorrowersByDate(string start, string end)
+        {
+            var borrowers = new List<Borrower>();
+            using (var cmd = CreateCommand("SELECT * FROM tblBorrowers WHERE Date_Borrowed BETWEEN '" + start + "' AND '" + end + "'"))
+            {
+                GetConnection();
+                using ( var reader = cmd.ExecuteReader())
                 {
                     while (reader.Read()) borrowers.Add(ConvertReaderToBorrower(reader));
                 }

@@ -34,6 +34,11 @@ namespace Inventory.Forms
             lblDate.Text = DateTime.Now.ToString("D");
             lblTime.Text = DateTime.Now.ToString("T");
         }
+        void DateTimePickerValues()
+        {
+            dtpStart.MaxDate = dtpEnd.Value;
+            dtpEnd.MinDate = dtpStart.Value;
+        }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -91,11 +96,13 @@ namespace Inventory.Forms
 
         private void dtpEnd_ValueChanged(object sender, EventArgs e)
         {
+            DateTimePickerValues();
             RefreshReportGridByDate();
         }
 
         private void dtpStart_ValueChanged(object sender, EventArgs e)
         {
+            DateTimePickerValues();
             RefreshReportGridByDate();
         }
 
@@ -106,52 +113,58 @@ namespace Inventory.Forms
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (dgvReport.Rows.Count == 0)
-            {
-                MessageBox.Show("No data to be exported");
-                return;
-            }
-
-            DataTable report;
-
-            report = new DataTable();
-            foreach(DataGridViewColumn col in dgvReport.Columns)
-            {
-                report.Columns.Add(col.Name);
-            }
-
-            productReport.ForEach(r =>
-            {
-                var datedisposed = r.Date_Disposed.ToString("MM/dd/yyyy hh:mm:ss");
-                if (r.Date_Disposed.ToString("MM/dd/yyyy hh:mm:ss") == "01/01/1999 12:00:00")
-                {
-                    datedisposed = " ";
-                }
-                report.Rows.Add(
-                    r.Ref_No,
-                    r.Item,
-                    r.Description,
-                    r.End_User,
-                    r.Diagnosed,
-                    r.Serial_Number,
-                    r.Date_Delivered.ToString("MM/dd/yyyy hh:mm:ss"),
-                    r.Date_Checked.ToString("MM/dd/yyyy hh:mm:ss"),
-                    r.Remarks,
-                    datedisposed
-                    );
-            });
-
-            string filename = Util.SaveAndGetExcelName();
-
-            XLWorkbook wb = new XLWorkbook();
-            wb.Worksheets.Add(report, "service");
-            wb.SaveAs(filename);
-
-            DialogResult result = MessageBox.Show("Service report exported. Would you like to open the report?", "Export", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show("Would you like to export this report?", "Export", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
-                Process.Start(filename);
+                if (dgvReport.Rows.Count == 0)
+                {
+                    MessageBox.Show("No data to be exported");
+                    return;
+                }
+
+                DataTable report;
+
+                report = new DataTable();
+                foreach (DataGridViewColumn col in dgvReport.Columns)
+                {
+                    report.Columns.Add(col.HeaderText);
+                }
+
+                productReport.ForEach(r =>
+                {
+                    var datedisposed = r.Date_Disposed.ToString("MM/dd/yyyy hh:mm:ss");
+                    if (r.Date_Disposed.ToString("MM/dd/yyyy hh:mm:ss") == "01/01/1999 12:00:00")
+                    {
+                        datedisposed = " ";
+                    }
+                    report.Rows.Add(
+                        r.Ref_No,
+                        r.Item,
+                        r.Description,
+                        r.End_User,
+                        r.Diagnosed,
+                        r.Serial_Number,
+                        r.Date_Delivered.ToString("MM/dd/yyyy hh:mm:ss"),
+                        r.Date_Checked.ToString("MM/dd/yyyy hh:mm:ss"),
+                        r.Remarks,
+                        datedisposed
+                        );
+                });
+
+                string filename = Util.SaveAndGetExcelName("Service_");
+
+                XLWorkbook wb = new XLWorkbook();
+                wb.Worksheets.Add(report, "service");
+                wb.SaveAs(filename);
+
+                DialogResult result2 = MessageBox.Show("Service report exported. Would you like to open the report?", "Export", MessageBoxButtons.YesNo);
+                if (result2 == DialogResult.Yes)
+                {
+                    Process.Start(filename);
+                }
+                MessageBox.Show("You may check the exported file at, " + filename);
             }
+            
         }
     }
 }

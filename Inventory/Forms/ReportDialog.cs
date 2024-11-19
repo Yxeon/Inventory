@@ -19,7 +19,7 @@ namespace Inventory.Forms
 
         private void btnFileMaintenance_Click(object sender, EventArgs e)
         {
-
+            MainForm.LoadForm(new BorrowerReportForm());
         }
 
         private void button1_Click(object sender, EventArgs e)

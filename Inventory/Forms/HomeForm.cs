@@ -34,5 +34,10 @@ namespace Inventory.Forms
         {
             MainForm.LoadForm(new ReportDialog());
         }
+
+        private void btnInquiry_Click(object sender, EventArgs e)
+        {
+            MainForm.LoadForm(new InquiryDialog());
+        }
     }
 }

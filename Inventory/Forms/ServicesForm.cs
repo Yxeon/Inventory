@@ -66,7 +66,7 @@ namespace Inventory.Forms
 
         private void RefreshStatus()
         {
-            statusList = Models.Statuss.GetAllStatus();
+            statusList = Statuss.GetAllStatus();
             dgvStatus.Rows.Clear();
             statusList.ForEach(s =>
             {
@@ -186,7 +186,6 @@ namespace Inventory.Forms
                     {
                         pic = "No attached image";
                     }
-                    if (tbReferenceNumber.Text == string.Empty) throw new Level1Exception("Please enter a valid reference number");
                     var product = new Product()
                     {
                         Ref_No = tbReferenceNumber.Text.Trim(),
@@ -216,7 +215,6 @@ namespace Inventory.Forms
         private void tbReferenceNumber_TextChanged(object sender, EventArgs e)
         {
             Product product = Product.SearchProduct(tbReferenceNumber.Text);
-            validators.ForEach(v => v.Reset());
             if (product != null)
             {
                 tbItem.Text = product.Item;
@@ -229,6 +227,7 @@ namespace Inventory.Forms
                 btnAddRecord.Visible = false;
                 btnSaveRecord.Visible = true;
                 btnCheckUp.Visible = true;
+                validators.ForEach(v => v.Reset());
             }
             else
             {

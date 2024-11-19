@@ -10,9 +10,9 @@ namespace Inventory
 {
     class Util
     {
-        public static string SaveAndGetExcelName()
+        public static string SaveAndGetExcelName(string report)
         {
-            string fileName = "Service_" + DateTime.Now.ToString("yyyy_MM_dd_hhmmss") + ".xlsx";
+            string fileName = report + DateTime.Now.ToString("yyyy_MM_dd_hhmmss") + ".xlsx";
             return Path.Combine(Directory.GetCurrentDirectory(), "../../Resources/Backup/", fileName);
         }
 

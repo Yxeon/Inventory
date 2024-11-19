@@ -30,6 +30,16 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.dgvReport = new System.Windows.Forms.DataGridView();
+            this.Ref_No = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Item = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.End_User = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Diagnose = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Serial_No = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date_Delivered = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date_Checked = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Remarks = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -48,21 +58,17 @@
             this.tbSerialNumber = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dgvReport = new System.Windows.Forms.DataGridView();
-            this.Ref_No = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Item = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.End_User = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Diagnose = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Serial_No = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date_Delivered = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date_Checked = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Remarks = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblSerialNum = new System.Windows.Forms.Label();
+            this.lblDepartment = new System.Windows.Forms.Label();
+            this.lblItem = new System.Windows.Forms.Label();
+            this.lblLastname = new System.Windows.Forms.Label();
+            this.lblFirstname = new System.Windows.Forms.Label();
+            this.lblMiddlename = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReport)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvReport)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -89,6 +95,92 @@
             this.panel5.Size = new System.Drawing.Size(890, 456);
             this.panel5.TabIndex = 23;
             this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
+            // 
+            // dgvReport
+            // 
+            this.dgvReport.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dgvReport.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvReport.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Ref_No,
+            this.Item,
+            this.Description,
+            this.End_User,
+            this.Diagnose,
+            this.Serial_No,
+            this.Date_Delivered,
+            this.Date_Checked,
+            this.Remarks});
+            this.dgvReport.Location = new System.Drawing.Point(17, 34);
+            this.dgvReport.Name = "dgvReport";
+            this.dgvReport.RowHeadersWidth = 51;
+            this.dgvReport.RowTemplate.Height = 24;
+            this.dgvReport.Size = new System.Drawing.Size(846, 367);
+            this.dgvReport.TabIndex = 22;
+            this.dgvReport.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvReport_CellDoubleClick);
+            // 
+            // Ref_No
+            // 
+            this.Ref_No.HeaderText = "Serial Number";
+            this.Ref_No.MinimumWidth = 6;
+            this.Ref_No.Name = "Ref_No";
+            this.Ref_No.Width = 125;
+            // 
+            // Item
+            // 
+            this.Item.HeaderText = "Item";
+            this.Item.MinimumWidth = 6;
+            this.Item.Name = "Item";
+            this.Item.Width = 125;
+            // 
+            // Description
+            // 
+            this.Description.HeaderText = "Fullname";
+            this.Description.MinimumWidth = 6;
+            this.Description.Name = "Description";
+            this.Description.Width = 125;
+            // 
+            // End_User
+            // 
+            this.End_User.HeaderText = "Department";
+            this.End_User.MinimumWidth = 6;
+            this.End_User.Name = "End_User";
+            this.End_User.Width = 125;
+            // 
+            // Diagnose
+            // 
+            this.Diagnose.HeaderText = "Date Borrow";
+            this.Diagnose.MinimumWidth = 6;
+            this.Diagnose.Name = "Diagnose";
+            this.Diagnose.Width = 125;
+            // 
+            // Serial_No
+            // 
+            this.Serial_No.HeaderText = "Status";
+            this.Serial_No.MinimumWidth = 6;
+            this.Serial_No.Name = "Serial_No";
+            this.Serial_No.Width = 125;
+            // 
+            // Date_Delivered
+            // 
+            this.Date_Delivered.HeaderText = "Remarks";
+            this.Date_Delivered.MinimumWidth = 6;
+            this.Date_Delivered.Name = "Date_Delivered";
+            this.Date_Delivered.Width = 125;
+            // 
+            // Date_Checked
+            // 
+            this.Date_Checked.HeaderText = "Head";
+            this.Date_Checked.MinimumWidth = 6;
+            this.Date_Checked.Name = "Date_Checked";
+            this.Date_Checked.Width = 125;
+            // 
+            // Remarks
+            // 
+            this.Remarks.HeaderText = "Lab Assistant";
+            this.Remarks.MinimumWidth = 6;
+            this.Remarks.Name = "Remarks";
+            this.Remarks.Width = 125;
             // 
             // button1
             // 
@@ -134,6 +226,12 @@
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.lblMiddlename);
+            this.panel2.Controls.Add(this.lblFirstname);
+            this.panel2.Controls.Add(this.lblLastname);
+            this.panel2.Controls.Add(this.lblItem);
+            this.panel2.Controls.Add(this.lblDepartment);
+            this.panel2.Controls.Add(this.lblSerialNum);
             this.panel2.Controls.Add(this.btnSaveRecord);
             this.panel2.Controls.Add(this.tbItem);
             this.panel2.Controls.Add(this.label7);
@@ -218,7 +316,7 @@
             // tbMiddlename
             // 
             this.tbMiddlename.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbMiddlename.Location = new System.Drawing.Point(573, 143);
+            this.tbMiddlename.Location = new System.Drawing.Point(576, 143);
             this.tbMiddlename.Margin = new System.Windows.Forms.Padding(10, 10, 3, 12);
             this.tbMiddlename.MaximumSize = new System.Drawing.Size(9999, 9999);
             this.tbMiddlename.Name = "tbMiddlename";
@@ -242,7 +340,7 @@
             // tbFirstname
             // 
             this.tbFirstname.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbFirstname.Location = new System.Drawing.Point(294, 143);
+            this.tbFirstname.Location = new System.Drawing.Point(296, 143);
             this.tbFirstname.Margin = new System.Windows.Forms.Padding(10, 10, 3, 12);
             this.tbFirstname.MaximumSize = new System.Drawing.Size(9999, 9999);
             this.tbFirstname.Name = "tbFirstname";
@@ -287,8 +385,9 @@
             // 
             // tbSerialNumber
             // 
+            this.tbSerialNumber.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbSerialNumber.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSerialNumber.Location = new System.Drawing.Point(102, 69);
+            this.tbSerialNumber.Location = new System.Drawing.Point(109, 69);
             this.tbSerialNumber.Margin = new System.Windows.Forms.Padding(10, 10, 3, 12);
             this.tbSerialNumber.MaximumSize = new System.Drawing.Size(9999, 9999);
             this.tbSerialNumber.Name = "tbSerialNumber";
@@ -324,90 +423,71 @@
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // dgvReport
+            // lblSerialNum
             // 
-            this.dgvReport.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dgvReport.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dgvReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvReport.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Ref_No,
-            this.Item,
-            this.Description,
-            this.End_User,
-            this.Diagnose,
-            this.Serial_No,
-            this.Date_Delivered,
-            this.Date_Checked,
-            this.Remarks});
-            this.dgvReport.Location = new System.Drawing.Point(17, 34);
-            this.dgvReport.Name = "dgvReport";
-            this.dgvReport.RowHeadersWidth = 51;
-            this.dgvReport.RowTemplate.Height = 24;
-            this.dgvReport.Size = new System.Drawing.Size(846, 367);
-            this.dgvReport.TabIndex = 22;
+            this.lblSerialNum.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblSerialNum.AutoSize = true;
+            this.lblSerialNum.ForeColor = System.Drawing.Color.Red;
+            this.lblSerialNum.Location = new System.Drawing.Point(107, 98);
+            this.lblSerialNum.Name = "lblSerialNum";
+            this.lblSerialNum.Size = new System.Drawing.Size(27, 16);
+            this.lblSerialNum.TabIndex = 15;
+            this.lblSerialNum.Text = "red";
             // 
-            // Ref_No
+            // lblDepartment
             // 
-            this.Ref_No.HeaderText = "Serial Number";
-            this.Ref_No.MinimumWidth = 6;
-            this.Ref_No.Name = "Ref_No";
-            this.Ref_No.Width = 125;
+            this.lblDepartment.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblDepartment.AutoSize = true;
+            this.lblDepartment.ForeColor = System.Drawing.Color.Red;
+            this.lblDepartment.Location = new System.Drawing.Point(125, 259);
+            this.lblDepartment.Name = "lblDepartment";
+            this.lblDepartment.Size = new System.Drawing.Size(27, 16);
+            this.lblDepartment.TabIndex = 16;
+            this.lblDepartment.Text = "red";
             // 
-            // Item
+            // lblItem
             // 
-            this.Item.HeaderText = "Item";
-            this.Item.MinimumWidth = 6;
-            this.Item.Name = "Item";
-            this.Item.Width = 125;
+            this.lblItem.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblItem.AutoSize = true;
+            this.lblItem.ForeColor = System.Drawing.Color.Red;
+            this.lblItem.Location = new System.Drawing.Point(123, 312);
+            this.lblItem.Name = "lblItem";
+            this.lblItem.Size = new System.Drawing.Size(27, 16);
+            this.lblItem.TabIndex = 17;
+            this.lblItem.Text = "red";
             // 
-            // Description
+            // lblLastname
             // 
-            this.Description.HeaderText = "Fullname";
-            this.Description.MinimumWidth = 6;
-            this.Description.Name = "Description";
-            this.Description.Width = 125;
+            this.lblLastname.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblLastname.AutoSize = true;
+            this.lblLastname.ForeColor = System.Drawing.Color.Red;
+            this.lblLastname.Location = new System.Drawing.Point(27, 193);
+            this.lblLastname.Name = "lblLastname";
+            this.lblLastname.Size = new System.Drawing.Size(27, 16);
+            this.lblLastname.TabIndex = 18;
+            this.lblLastname.Text = "red";
             // 
-            // End_User
+            // lblFirstname
             // 
-            this.End_User.HeaderText = "Department";
-            this.End_User.MinimumWidth = 6;
-            this.End_User.Name = "End_User";
-            this.End_User.Width = 125;
+            this.lblFirstname.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblFirstname.AutoSize = true;
+            this.lblFirstname.ForeColor = System.Drawing.Color.Red;
+            this.lblFirstname.Location = new System.Drawing.Point(302, 193);
+            this.lblFirstname.Name = "lblFirstname";
+            this.lblFirstname.Size = new System.Drawing.Size(27, 16);
+            this.lblFirstname.TabIndex = 19;
+            this.lblFirstname.Text = "red";
             // 
-            // Diagnose
+            // lblMiddlename
             // 
-            this.Diagnose.HeaderText = "Date Borrow";
-            this.Diagnose.MinimumWidth = 6;
-            this.Diagnose.Name = "Diagnose";
-            this.Diagnose.Width = 125;
-            // 
-            // Serial_No
-            // 
-            this.Serial_No.HeaderText = "Status";
-            this.Serial_No.MinimumWidth = 6;
-            this.Serial_No.Name = "Serial_No";
-            this.Serial_No.Width = 125;
-            // 
-            // Date_Delivered
-            // 
-            this.Date_Delivered.HeaderText = "Remarks";
-            this.Date_Delivered.MinimumWidth = 6;
-            this.Date_Delivered.Name = "Date_Delivered";
-            this.Date_Delivered.Width = 125;
-            // 
-            // Date_Checked
-            // 
-            this.Date_Checked.HeaderText = "Head";
-            this.Date_Checked.MinimumWidth = 6;
-            this.Date_Checked.Name = "Date_Checked";
-            this.Date_Checked.Width = 125;
-            // 
-            // Remarks
-            // 
-            this.Remarks.HeaderText = "Lab Assistant";
-            this.Remarks.MinimumWidth = 6;
-            this.Remarks.Name = "Remarks";
-            this.Remarks.Width = 125;
+            this.lblMiddlename.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblMiddlename.AutoSize = true;
+            this.lblMiddlename.ForeColor = System.Drawing.Color.Red;
+            this.lblMiddlename.Location = new System.Drawing.Point(586, 193);
+            this.lblMiddlename.Name = "lblMiddlename";
+            this.lblMiddlename.Size = new System.Drawing.Size(27, 16);
+            this.lblMiddlename.TabIndex = 20;
+            this.lblMiddlename.Text = "red";
             // 
             // BorrowerForm
             // 
@@ -421,10 +501,10 @@
             this.panel1.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvReport)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvReport)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -461,5 +541,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Date_Delivered;
         private System.Windows.Forms.DataGridViewTextBoxColumn Date_Checked;
         private System.Windows.Forms.DataGridViewTextBoxColumn Remarks;
+        private System.Windows.Forms.Label lblMiddlename;
+        private System.Windows.Forms.Label lblFirstname;
+        private System.Windows.Forms.Label lblLastname;
+        private System.Windows.Forms.Label lblItem;
+        private System.Windows.Forms.Label lblDepartment;
+        private System.Windows.Forms.Label lblSerialNum;
     }
 }
