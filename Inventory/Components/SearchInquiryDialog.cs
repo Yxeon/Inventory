@@ -1,4 +1,5 @@
-﻿using Inventory.Models;
+﻿using Inventory.Forms;
+using Inventory.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,6 +19,11 @@ namespace Inventory.Components
         {
             this.form = form;
             InitializeComponent();
+
+            if (form == "Service")
+            {
+                label4.Text = "Enter your product reference number";
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -27,10 +33,17 @@ namespace Inventory.Components
                 var checkUp = Check_up.CheckCheckupExist(tbSerialNumber.Text);
                 if (checkUp == null)
                 {
-                    MessageBox.Show("No record found!");
+                    var product = Product.SearchProduct(tbSerialNumber.Text);
+                    if (product == null)
+                    {
+                        MessageBox.Show("No record found");
+                        return;
+                    }
+                    MessageBox.Show("Hello Ms/Mr " + product.End_User + ", your product '" + product.Item + "' has not yet been checked up.");
                     return;
                 }
-                MessageBox.Show(checkUp.ToString());
+                MainForm.LoadForm(new CheckupForm(tbSerialNumber.Text));
+                this.Dispose();
             }
             else
             {
@@ -40,7 +53,8 @@ namespace Inventory.Components
                     MessageBox.Show("No record found");
                     return;
                 }
-                MessageBox.Show(borrower.ToString());
+                MainForm.LoadForm(new UpdateBorrowerForm(tbSerialNumber.Text));
+                this.Dispose();
             }
         }
 

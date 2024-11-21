@@ -33,6 +33,24 @@ namespace Inventory.Forms
 
             AutoFill();
         }
+
+        public UpdateBorrowerForm(string _borrower)
+        {
+            InitializeComponent();
+            this.borrower = Borrower.GetBorrowerBySerial(_borrower);
+
+            validators.Add(new Validator(tbItemNumber, lblItem, "Item", "required|min:3"));
+            validators.Add(new Validator(tbLastname, lblLast, "Lastname", "required|min:2"));
+            validators.Add(new Validator(tbFirstname, lblFirst, "Firstname", "required|min:2"));
+            validators.Add(new Validator(tbMiddlename, lblMiddle, "Middlename", "required|min:1"));
+            validators.Add(new Validator(tbDepartment, lblDepartment, "Department", "required|min:1"));
+            validators.Add(new Validator(tbHead, lblHead, "Head", "required|min:1"));
+            validators.Add(new Validator(tbLabAssistant, lblLabAssistant, "Department", "required|min:1"));
+            validators.Add(new Validator(tbRemarks, lblRemark, "Department", "required|min:1"));
+
+            AutoFillInquiry();
+        }
+
         void AutoFill()
         {
             if (borrower.Status != "Pending")
@@ -47,6 +65,39 @@ namespace Inventory.Forms
             tbFirstname.Text = borrower.Firstname;
             tbMiddlename.Text = borrower.Middlename;
             tbDepartment.Text = borrower.Department;
+        }
+
+        void AutoFillInquiry()
+        {
+            lblTitle.Text = "BORROWER INQUIRY";
+            lblStatus.Text = "STATUS: " + borrower.Status;
+            if (borrower.Status != "Pending")
+            {
+                tbHead.Text = borrower.Head;
+                tbLabAssistant.Text = borrower.Lab_Assistant;
+                tbRemarks.Text = borrower.Remarks;
+            }
+            tbHead.Text = "Unassigned";
+            tbLabAssistant.Text = "Unassigned";
+            
+            tbSerialNumber.Text = borrower.Serial_No;
+            tbItemNumber.Text = borrower.Item;
+            tbLastname.Text = borrower.Lastname;
+            tbFirstname.Text = borrower.Firstname;
+            tbMiddlename.Text = borrower.Middlename;
+            tbDepartment.Text = borrower.Department;
+
+            tbHead.Enabled = false;
+            tbLabAssistant.Enabled = false;
+            tbRemarks.Enabled = false;
+            
+            btnApprove.Visible = false;
+            btnBack.Visible = false;
+            btnDecline.Visible = false;
+            btnEdit.Visible = false;
+
+            btnDone.Visible = true;
+            lblStatus.Visible = true;
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -135,6 +186,11 @@ namespace Inventory.Forms
             {
                 ex.DisplayMessage();
             }
+        }
+
+        private void btnDone_Click(object sender, EventArgs e)
+        {
+            MainForm.LoadForm(new InquiryDialog());
         }
     }
 }

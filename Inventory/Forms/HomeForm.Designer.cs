@@ -35,7 +35,6 @@
             this.btnInquiry = new System.Windows.Forms.Button();
             this.btnControlFile = new System.Windows.Forms.Button();
             this.btnReportGenerator = new System.Windows.Forms.Button();
-            this.btnComputerSystemModule = new System.Windows.Forms.Button();
             this.btnActionCodeModule = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -85,7 +84,6 @@
             this.flowLayoutPanel1.Controls.Add(this.btnInquiry);
             this.flowLayoutPanel1.Controls.Add(this.btnControlFile);
             this.flowLayoutPanel1.Controls.Add(this.btnReportGenerator);
-            this.flowLayoutPanel1.Controls.Add(this.btnComputerSystemModule);
             this.flowLayoutPanel1.Controls.Add(this.btnActionCodeModule);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(650, 49);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -145,6 +143,7 @@
             this.btnControlFile.TabIndex = 2;
             this.btnControlFile.Text = "Control File";
             this.btnControlFile.UseVisualStyleBackColor = false;
+            this.btnControlFile.Click += new System.EventHandler(this.btnControlFile_Click);
             // 
             // btnReportGenerator
             // 
@@ -164,39 +163,26 @@
             this.btnReportGenerator.UseVisualStyleBackColor = false;
             this.btnReportGenerator.Click += new System.EventHandler(this.btnReportGenerator_Click);
             // 
-            // btnComputerSystemModule
-            // 
-            this.btnComputerSystemModule.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnComputerSystemModule.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnComputerSystemModule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(122)))), ((int)(((byte)(145)))));
-            this.btnComputerSystemModule.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnComputerSystemModule.ForeColor = System.Drawing.Color.White;
-            this.btnComputerSystemModule.Location = new System.Drawing.Point(8, 238);
-            this.btnComputerSystemModule.Margin = new System.Windows.Forms.Padding(8, 10, 0, 0);
-            this.btnComputerSystemModule.Name = "btnComputerSystemModule";
-            this.btnComputerSystemModule.Padding = new System.Windows.Forms.Padding(5);
-            this.btnComputerSystemModule.Size = new System.Drawing.Size(198, 75);
-            this.btnComputerSystemModule.TabIndex = 4;
-            this.btnComputerSystemModule.Text = "Computer\r\nSystem Module";
-            this.btnComputerSystemModule.UseVisualStyleBackColor = false;
-            // 
             // btnActionCodeModule
             // 
             this.btnActionCodeModule.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnActionCodeModule.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnActionCodeModule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(122)))), ((int)(((byte)(145)))));
+            this.btnActionCodeModule.BackColor = System.Drawing.Color.Brown;
             this.btnActionCodeModule.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActionCodeModule.ForeColor = System.Drawing.Color.White;
-            this.btnActionCodeModule.Location = new System.Drawing.Point(214, 238);
+            this.btnActionCodeModule.Image = global::Inventory.Properties.Resources.free_exit_icon_2860_thumb1;
+            this.btnActionCodeModule.Location = new System.Drawing.Point(8, 238);
             this.btnActionCodeModule.Margin = new System.Windows.Forms.Padding(8, 10, 0, 0);
             this.btnActionCodeModule.Name = "btnActionCodeModule";
             this.btnActionCodeModule.Padding = new System.Windows.Forms.Padding(5);
-            this.btnActionCodeModule.Size = new System.Drawing.Size(197, 75);
+            this.btnActionCodeModule.Size = new System.Drawing.Size(403, 75);
             this.btnActionCodeModule.TabIndex = 5;
-            this.btnActionCodeModule.Text = "Action Code\r\nModule";
+            this.btnActionCodeModule.Text = "EXIT";
+            this.btnActionCodeModule.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnActionCodeModule.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnActionCodeModule.UseVisualStyleBackColor = false;
+            this.btnActionCodeModule.Click += new System.EventHandler(this.btnActionCodeModule_Click);
             // 
             // panel1
             // 
@@ -270,7 +256,6 @@
         private System.Windows.Forms.Button btnInquiry;
         private System.Windows.Forms.Button btnControlFile;
         private System.Windows.Forms.Button btnReportGenerator;
-        private System.Windows.Forms.Button btnComputerSystemModule;
         private System.Windows.Forms.Button btnActionCodeModule;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;

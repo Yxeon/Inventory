@@ -16,7 +16,22 @@ namespace Inventory.Forms
     public partial class CheckupForm : UserControl
     {
         Product product;
+        Check_up checkUp;
+        Statuss statuss;
         List<Validator> validators = new List<Validator>();
+        public CheckupForm(string product)
+        {
+            this.product = Product.SearchProduct(product);
+            this.checkUp = Check_up.CheckCheckupExist(product);
+            this.statuss = Statuss.CheckStatusExist(product);
+            InitializeComponent();
+
+            validators.Add(new Validator(tbCheckup, lblRed, "Check up", "required|min:5"));
+
+            lblStatus.Visible = false;
+
+            AutoFillInquiry();
+        }
 
         public CheckupForm(Product product)
         {
@@ -48,6 +63,31 @@ namespace Inventory.Forms
             tbEndUser.Text = product.End_User;
             tbDiagnose.Text = product.Diagnosed;
             pbProduct.ImageLocation = product.Picture;
+        }
+
+        void AutoFillInquiry()
+        {
+            tbSerialNumber.Text = checkUp.Serial_Number;
+            tbCheckup.Text = checkUp.History;
+            cbStatus.Text = statuss.Stat;
+
+            tbReferenceNumber.Text = product.Ref_No;
+            tbDateDelivered.Text = product.Date_Delivered.ToString("d");
+            tbItemName.Text = product.Item;
+            tbEndUser.Text = product.End_User;
+            tbDiagnose.Text = product.Diagnosed;
+            pbProduct.ImageLocation = product.Picture;
+
+            tbSerialNumber.Enabled = false;
+            tbCheckup.Enabled = false;
+            cbStatus.Enabled = false;
+
+            btnCancel.Visible = false;
+            btnDone.Visible = false;
+
+            btnOkay.Visible = true;
+
+            lblService.Text = "SERVICE INQUIRY";
         }
 
         private void btnDone_Click(object sender, EventArgs e)
@@ -164,6 +204,11 @@ namespace Inventory.Forms
                 lblStatus.Visible = false;
                 lblRemarks.Text = "Remarks";
             }
+        }
+
+        private void btnOkay_Click(object sender, EventArgs e)
+        {
+            MainForm.LoadForm(new InquiryDialog());
         }
     }
 }

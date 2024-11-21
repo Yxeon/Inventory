@@ -29,6 +29,20 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnOkay = new System.Windows.Forms.Button();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.lblRed = new System.Windows.Forms.Label();
+            this.cbStatus = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.lblService = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pbProduct = new System.Windows.Forms.PictureBox();
+            this.tbDiagnose = new System.Windows.Forms.TextBox();
+            this.tbEndUser = new System.Windows.Forms.TextBox();
+            this.tbItemName = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnDone = new System.Windows.Forms.Button();
             this.tbDateDelivered = new System.Windows.Forms.TextBox();
@@ -39,19 +53,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.tbDiagnose = new System.Windows.Forms.TextBox();
-            this.tbEndUser = new System.Windows.Forms.TextBox();
-            this.tbItemName = new System.Windows.Forms.TextBox();
-            this.pbProduct = new System.Windows.Forms.PictureBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.cbStatus = new System.Windows.Forms.ComboBox();
-            this.lblRed = new System.Windows.Forms.Label();
-            this.lblStatus = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbProduct)).BeginInit();
@@ -59,11 +60,12 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnOkay);
             this.panel1.Controls.Add(this.lblStatus);
             this.panel1.Controls.Add(this.lblRed);
             this.panel1.Controls.Add(this.cbStatus);
             this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.lblService);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.btnCancel);
             this.panel1.Controls.Add(this.btnDone);
@@ -80,6 +82,175 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(949, 476);
             this.panel1.TabIndex = 0;
+            // 
+            // btnOkay
+            // 
+            this.btnOkay.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnOkay.Location = new System.Drawing.Point(670, 407);
+            this.btnOkay.Name = "btnOkay";
+            this.btnOkay.Size = new System.Drawing.Size(75, 23);
+            this.btnOkay.TabIndex = 16;
+            this.btnOkay.Text = "OK";
+            this.btnOkay.UseVisualStyleBackColor = true;
+            this.btnOkay.Visible = false;
+            this.btnOkay.Click += new System.EventHandler(this.btnOkay_Click);
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.ForeColor = System.Drawing.Color.Red;
+            this.lblStatus.Location = new System.Drawing.Point(781, 90);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(68, 16);
+            this.lblStatus.TabIndex = 15;
+            this.lblStatus.Text = "*Required";
+            this.lblStatus.Visible = false;
+            // 
+            // lblRed
+            // 
+            this.lblRed.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblRed.AutoSize = true;
+            this.lblRed.ForeColor = System.Drawing.Color.Red;
+            this.lblRed.Location = new System.Drawing.Point(504, 382);
+            this.lblRed.Name = "lblRed";
+            this.lblRed.Size = new System.Drawing.Size(27, 16);
+            this.lblRed.TabIndex = 14;
+            this.lblRed.Text = "red";
+            // 
+            // cbStatus
+            // 
+            this.cbStatus.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbStatus.FormattingEnabled = true;
+            this.cbStatus.Items.AddRange(new object[] {
+            "--SELECT--",
+            "OPERATIONAL",
+            "FIXED",
+            "UNFIXABLE"});
+            this.cbStatus.Location = new System.Drawing.Point(778, 64);
+            this.cbStatus.Name = "cbStatus";
+            this.cbStatus.Size = new System.Drawing.Size(138, 24);
+            this.cbStatus.TabIndex = 13;
+            this.cbStatus.SelectedIndexChanged += new System.EventHandler(this.cbStatus_SelectedIndexChanged);
+            // 
+            // label9
+            // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(4)))), ((int)(((byte)(76)))));
+            this.label9.Location = new System.Drawing.Point(719, 66);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(53, 22);
+            this.label9.TabIndex = 12;
+            this.label9.Text = "Status:";
+            // 
+            // lblService
+            // 
+            this.lblService.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblService.AutoSize = true;
+            this.lblService.BackColor = System.Drawing.Color.Transparent;
+            this.lblService.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblService.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(4)))), ((int)(((byte)(76)))));
+            this.lblService.Location = new System.Drawing.Point(591, 26);
+            this.lblService.Name = "lblService";
+            this.lblService.Size = new System.Drawing.Size(207, 27);
+            this.lblService.TabIndex = 11;
+            this.lblService.Text = "CHECK UP FORM";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.pbProduct);
+            this.groupBox1.Controls.Add(this.tbDiagnose);
+            this.groupBox1.Controls.Add(this.tbEndUser);
+            this.groupBox1.Controls.Add(this.tbItemName);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Enabled = false;
+            this.groupBox1.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(4)))), ((int)(((byte)(76)))));
+            this.groupBox1.Location = new System.Drawing.Point(27, 26);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(438, 406);
+            this.groupBox1.TabIndex = 10;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Product Information";
+            // 
+            // pbProduct
+            // 
+            this.pbProduct.Location = new System.Drawing.Point(119, 27);
+            this.pbProduct.Name = "pbProduct";
+            this.pbProduct.Size = new System.Drawing.Size(196, 196);
+            this.pbProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbProduct.TabIndex = 17;
+            this.pbProduct.TabStop = false;
+            // 
+            // tbDiagnose
+            // 
+            this.tbDiagnose.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbDiagnose.Location = new System.Drawing.Point(158, 329);
+            this.tbDiagnose.Name = "tbDiagnose";
+            this.tbDiagnose.ReadOnly = true;
+            this.tbDiagnose.Size = new System.Drawing.Size(267, 28);
+            this.tbDiagnose.TabIndex = 16;
+            // 
+            // tbEndUser
+            // 
+            this.tbEndUser.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbEndUser.Location = new System.Drawing.Point(158, 284);
+            this.tbEndUser.Name = "tbEndUser";
+            this.tbEndUser.ReadOnly = true;
+            this.tbEndUser.Size = new System.Drawing.Size(267, 28);
+            this.tbEndUser.TabIndex = 15;
+            // 
+            // tbItemName
+            // 
+            this.tbItemName.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbItemName.Location = new System.Drawing.Point(158, 239);
+            this.tbItemName.Name = "tbItemName";
+            this.tbItemName.ReadOnly = true;
+            this.tbItemName.Size = new System.Drawing.Size(267, 28);
+            this.tbItemName.TabIndex = 14;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(4)))), ((int)(((byte)(76)))));
+            this.label7.Location = new System.Drawing.Point(3, 332);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(138, 22);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Reported Diagnose:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(4)))), ((int)(((byte)(76)))));
+            this.label6.Location = new System.Drawing.Point(4, 287);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(75, 22);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "End User:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(4)))), ((int)(((byte)(76)))));
+            this.label5.Location = new System.Drawing.Point(4, 240);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(85, 22);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Item Name:";
             // 
             // btnCancel
             // 
@@ -106,6 +277,7 @@
             // tbDateDelivered
             // 
             this.tbDateDelivered.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbDateDelivered.Enabled = false;
             this.tbDateDelivered.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbDateDelivered.Location = new System.Drawing.Point(649, 180);
             this.tbDateDelivered.Name = "tbDateDelivered";
@@ -116,6 +288,7 @@
             // tbReferenceNumber
             // 
             this.tbReferenceNumber.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbReferenceNumber.Enabled = false;
             this.tbReferenceNumber.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbReferenceNumber.Location = new System.Drawing.Point(649, 147);
             this.tbReferenceNumber.Name = "tbReferenceNumber";
@@ -194,162 +367,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Serial Number:";
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.pbProduct);
-            this.groupBox1.Controls.Add(this.tbDiagnose);
-            this.groupBox1.Controls.Add(this.tbEndUser);
-            this.groupBox1.Controls.Add(this.tbItemName);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(4)))), ((int)(((byte)(76)))));
-            this.groupBox1.Location = new System.Drawing.Point(27, 26);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(438, 406);
-            this.groupBox1.TabIndex = 10;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Product Information";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(4)))), ((int)(((byte)(76)))));
-            this.label5.Location = new System.Drawing.Point(4, 240);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(85, 22);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Item Name:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(4)))), ((int)(((byte)(76)))));
-            this.label6.Location = new System.Drawing.Point(4, 287);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(75, 22);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "End User:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(4)))), ((int)(((byte)(76)))));
-            this.label7.Location = new System.Drawing.Point(3, 332);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(138, 22);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Reported Diagnose:";
-            // 
-            // tbDiagnose
-            // 
-            this.tbDiagnose.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbDiagnose.Location = new System.Drawing.Point(158, 329);
-            this.tbDiagnose.Name = "tbDiagnose";
-            this.tbDiagnose.ReadOnly = true;
-            this.tbDiagnose.Size = new System.Drawing.Size(267, 28);
-            this.tbDiagnose.TabIndex = 16;
-            // 
-            // tbEndUser
-            // 
-            this.tbEndUser.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbEndUser.Location = new System.Drawing.Point(158, 284);
-            this.tbEndUser.Name = "tbEndUser";
-            this.tbEndUser.ReadOnly = true;
-            this.tbEndUser.Size = new System.Drawing.Size(267, 28);
-            this.tbEndUser.TabIndex = 15;
-            // 
-            // tbItemName
-            // 
-            this.tbItemName.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbItemName.Location = new System.Drawing.Point(158, 239);
-            this.tbItemName.Name = "tbItemName";
-            this.tbItemName.ReadOnly = true;
-            this.tbItemName.Size = new System.Drawing.Size(267, 28);
-            this.tbItemName.TabIndex = 14;
-            // 
-            // pbProduct
-            // 
-            this.pbProduct.Location = new System.Drawing.Point(119, 27);
-            this.pbProduct.Name = "pbProduct";
-            this.pbProduct.Size = new System.Drawing.Size(196, 196);
-            this.pbProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbProduct.TabIndex = 17;
-            this.pbProduct.TabStop = false;
-            // 
-            // label8
-            // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(4)))), ((int)(((byte)(76)))));
-            this.label8.Location = new System.Drawing.Point(591, 26);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(207, 27);
-            this.label8.TabIndex = 11;
-            this.label8.Text = "CHECK UP FORM";
-            // 
-            // label9
-            // 
-            this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(4)))), ((int)(((byte)(76)))));
-            this.label9.Location = new System.Drawing.Point(719, 66);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(53, 22);
-            this.label9.TabIndex = 12;
-            this.label9.Text = "Status:";
-            // 
-            // cbStatus
-            // 
-            this.cbStatus.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cbStatus.FormattingEnabled = true;
-            this.cbStatus.Items.AddRange(new object[] {
-            "--SELECT--",
-            "OPERATIONAL",
-            "FIXED",
-            "UNFIXABLE"});
-            this.cbStatus.Location = new System.Drawing.Point(778, 64);
-            this.cbStatus.Name = "cbStatus";
-            this.cbStatus.Size = new System.Drawing.Size(138, 24);
-            this.cbStatus.TabIndex = 13;
-            this.cbStatus.SelectedIndexChanged += new System.EventHandler(this.cbStatus_SelectedIndexChanged);
-            // 
-            // lblRed
-            // 
-            this.lblRed.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblRed.AutoSize = true;
-            this.lblRed.ForeColor = System.Drawing.Color.Red;
-            this.lblRed.Location = new System.Drawing.Point(504, 382);
-            this.lblRed.Name = "lblRed";
-            this.lblRed.Size = new System.Drawing.Size(27, 16);
-            this.lblRed.TabIndex = 14;
-            this.lblRed.Text = "red";
-            // 
-            // lblStatus
-            // 
-            this.lblStatus.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblStatus.AutoSize = true;
-            this.lblStatus.ForeColor = System.Drawing.Color.Red;
-            this.lblStatus.Location = new System.Drawing.Point(781, 90);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(68, 16);
-            this.lblStatus.TabIndex = 15;
-            this.lblStatus.Text = "*Required";
-            this.lblStatus.Visible = false;
-            // 
             // CheckupForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -389,9 +406,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cbStatus;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblService;
         private System.Windows.Forms.PictureBox pbProduct;
         private System.Windows.Forms.Label lblRed;
         private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.Button btnOkay;
     }
 }

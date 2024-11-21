@@ -29,9 +29,26 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.lblLabAssistant = new System.Windows.Forms.Label();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.lblHead = new System.Windows.Forms.Label();
             this.lblRemark = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblDepartment = new System.Windows.Forms.Label();
+            this.lblMiddle = new System.Windows.Forms.Label();
+            this.lblFirst = new System.Windows.Forms.Label();
+            this.lblLast = new System.Windows.Forms.Label();
+            this.lblItem = new System.Windows.Forms.Label();
+            this.lblSerialnumber = new System.Windows.Forms.Label();
+            this.tbDepartment = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbMiddlename = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.tbFirstname = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.tbLastname = new System.Windows.Forms.TextBox();
             this.tbItemNumber = new System.Windows.Forms.TextBox();
             this.tbSerialNumber = new System.Windows.Forms.TextBox();
@@ -46,35 +63,22 @@
             this.lblRemarks = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.lblHead = new System.Windows.Forms.Label();
-            this.lblLabAssistant = new System.Windows.Forms.Label();
-            this.tbFirstname = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.btnBack = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.tbDepartment = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tbMiddlename = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lblSerialnumber = new System.Windows.Forms.Label();
-            this.lblItem = new System.Windows.Forms.Label();
-            this.lblLast = new System.Windows.Forms.Label();
-            this.lblFirst = new System.Windows.Forms.Label();
-            this.lblMiddle = new System.Windows.Forms.Label();
-            this.lblDepartment = new System.Windows.Forms.Label();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.btnDone = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnDone);
+            this.panel1.Controls.Add(this.lblStatus);
             this.panel1.Controls.Add(this.btnBack);
             this.panel1.Controls.Add(this.lblLabAssistant);
             this.panel1.Controls.Add(this.btnEdit);
             this.panel1.Controls.Add(this.lblHead);
             this.panel1.Controls.Add(this.lblRemark);
-            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.lblTitle);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.btnDecline);
             this.panel1.Controls.Add(this.btnApprove);
@@ -90,6 +94,52 @@
             this.panel1.Size = new System.Drawing.Size(949, 489);
             this.panel1.TabIndex = 0;
             // 
+            // btnBack
+            // 
+            this.btnBack.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnBack.Font = new System.Drawing.Font("Arial Narrow", 8F);
+            this.btnBack.Location = new System.Drawing.Point(47, 413);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(75, 25);
+            this.btnBack.TabIndex = 17;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // lblLabAssistant
+            // 
+            this.lblLabAssistant.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblLabAssistant.AutoSize = true;
+            this.lblLabAssistant.ForeColor = System.Drawing.Color.Red;
+            this.lblLabAssistant.Location = new System.Drawing.Point(628, 203);
+            this.lblLabAssistant.Name = "lblLabAssistant";
+            this.lblLabAssistant.Size = new System.Drawing.Size(27, 16);
+            this.lblLabAssistant.TabIndex = 16;
+            this.lblLabAssistant.Text = "red";
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnEdit.Font = new System.Drawing.Font("Arial Narrow", 8F);
+            this.btnEdit.Location = new System.Drawing.Point(376, 68);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(75, 25);
+            this.btnEdit.TabIndex = 19;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // lblHead
+            // 
+            this.lblHead.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblHead.AutoSize = true;
+            this.lblHead.ForeColor = System.Drawing.Color.Red;
+            this.lblHead.Location = new System.Drawing.Point(628, 151);
+            this.lblHead.Name = "lblHead";
+            this.lblHead.Size = new System.Drawing.Size(27, 16);
+            this.lblHead.TabIndex = 15;
+            this.lblHead.Text = "red";
+            // 
             // lblRemark
             // 
             this.lblRemark.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -101,18 +151,18 @@
             this.lblRemark.TabIndex = 14;
             this.lblRemark.Text = "red";
             // 
-            // label8
+            // lblTitle
             // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(4)))), ((int)(((byte)(76)))));
-            this.label8.Location = new System.Drawing.Point(591, 42);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(226, 27);
-            this.label8.TabIndex = 11;
-            this.label8.Text = "BORROWER FORM";
+            this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitle.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(4)))), ((int)(((byte)(76)))));
+            this.lblTitle.Location = new System.Drawing.Point(591, 42);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(226, 27);
+            this.lblTitle.TabIndex = 11;
+            this.lblTitle.Text = "BORROWER FORM";
             // 
             // groupBox1
             // 
@@ -146,6 +196,151 @@
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Borrower Information";
+            // 
+            // lblDepartment
+            // 
+            this.lblDepartment.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblDepartment.AutoSize = true;
+            this.lblDepartment.Font = new System.Drawing.Font("Arial Narrow", 8F);
+            this.lblDepartment.ForeColor = System.Drawing.Color.Red;
+            this.lblDepartment.Location = new System.Drawing.Point(156, 344);
+            this.lblDepartment.Name = "lblDepartment";
+            this.lblDepartment.Size = new System.Drawing.Size(24, 17);
+            this.lblDepartment.TabIndex = 29;
+            this.lblDepartment.Text = "red";
+            // 
+            // lblMiddle
+            // 
+            this.lblMiddle.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblMiddle.AutoSize = true;
+            this.lblMiddle.Font = new System.Drawing.Font("Arial Narrow", 8F);
+            this.lblMiddle.ForeColor = System.Drawing.Color.Red;
+            this.lblMiddle.Location = new System.Drawing.Point(156, 291);
+            this.lblMiddle.Name = "lblMiddle";
+            this.lblMiddle.Size = new System.Drawing.Size(24, 17);
+            this.lblMiddle.TabIndex = 28;
+            this.lblMiddle.Text = "red";
+            // 
+            // lblFirst
+            // 
+            this.lblFirst.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblFirst.AutoSize = true;
+            this.lblFirst.Font = new System.Drawing.Font("Arial Narrow", 8F);
+            this.lblFirst.ForeColor = System.Drawing.Color.Red;
+            this.lblFirst.Location = new System.Drawing.Point(156, 239);
+            this.lblFirst.Name = "lblFirst";
+            this.lblFirst.Size = new System.Drawing.Size(24, 17);
+            this.lblFirst.TabIndex = 27;
+            this.lblFirst.Text = "red";
+            // 
+            // lblLast
+            // 
+            this.lblLast.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblLast.AutoSize = true;
+            this.lblLast.Font = new System.Drawing.Font("Arial Narrow", 8F);
+            this.lblLast.ForeColor = System.Drawing.Color.Red;
+            this.lblLast.Location = new System.Drawing.Point(156, 191);
+            this.lblLast.Name = "lblLast";
+            this.lblLast.Size = new System.Drawing.Size(24, 17);
+            this.lblLast.TabIndex = 26;
+            this.lblLast.Text = "red";
+            // 
+            // lblItem
+            // 
+            this.lblItem.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblItem.AutoSize = true;
+            this.lblItem.Font = new System.Drawing.Font("Arial Narrow", 8F);
+            this.lblItem.ForeColor = System.Drawing.Color.Red;
+            this.lblItem.Location = new System.Drawing.Point(156, 142);
+            this.lblItem.Name = "lblItem";
+            this.lblItem.Size = new System.Drawing.Size(24, 17);
+            this.lblItem.TabIndex = 25;
+            this.lblItem.Text = "red";
+            // 
+            // lblSerialnumber
+            // 
+            this.lblSerialnumber.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblSerialnumber.AutoSize = true;
+            this.lblSerialnumber.Font = new System.Drawing.Font("Arial Narrow", 8F);
+            this.lblSerialnumber.ForeColor = System.Drawing.Color.Red;
+            this.lblSerialnumber.Location = new System.Drawing.Point(156, 90);
+            this.lblSerialnumber.Name = "lblSerialnumber";
+            this.lblSerialnumber.Size = new System.Drawing.Size(24, 17);
+            this.lblSerialnumber.TabIndex = 20;
+            this.lblSerialnumber.Text = "red";
+            // 
+            // tbDepartment
+            // 
+            this.tbDepartment.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbDepartment.Location = new System.Drawing.Point(159, 316);
+            this.tbDepartment.Name = "tbDepartment";
+            this.tbDepartment.Size = new System.Drawing.Size(267, 28);
+            this.tbDepartment.TabIndex = 24;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(4)))), ((int)(((byte)(76)))));
+            this.label1.Location = new System.Drawing.Point(15, 321);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(89, 22);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "Department:";
+            // 
+            // tbMiddlename
+            // 
+            this.tbMiddlename.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbMiddlename.Location = new System.Drawing.Point(158, 263);
+            this.tbMiddlename.Name = "tbMiddlename";
+            this.tbMiddlename.Size = new System.Drawing.Size(267, 28);
+            this.tbMiddlename.TabIndex = 22;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(4)))), ((int)(((byte)(76)))));
+            this.label4.Location = new System.Drawing.Point(14, 266);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(90, 22);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "Middlename";
+            // 
+            // btnSave
+            // 
+            this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSave.Font = new System.Drawing.Font("Arial Narrow", 8F);
+            this.btnSave.Location = new System.Drawing.Point(350, 370);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 25);
+            this.btnSave.TabIndex = 20;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Visible = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // tbFirstname
+            // 
+            this.tbFirstname.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbFirstname.Location = new System.Drawing.Point(159, 210);
+            this.tbFirstname.Name = "tbFirstname";
+            this.tbFirstname.Size = new System.Drawing.Size(267, 28);
+            this.tbFirstname.TabIndex = 18;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(4)))), ((int)(((byte)(76)))));
+            this.label9.Location = new System.Drawing.Point(15, 210);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(78, 22);
+            this.label9.TabIndex = 17;
+            this.label9.Text = "Firstname:";
             // 
             // tbLastname
             // 
@@ -296,196 +491,32 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Head:";
             // 
-            // lblHead
+            // lblStatus
             // 
-            this.lblHead.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblHead.AutoSize = true;
-            this.lblHead.ForeColor = System.Drawing.Color.Red;
-            this.lblHead.Location = new System.Drawing.Point(628, 151);
-            this.lblHead.Name = "lblHead";
-            this.lblHead.Size = new System.Drawing.Size(27, 16);
-            this.lblHead.TabIndex = 15;
-            this.lblHead.Text = "red";
+            this.lblStatus.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.BackColor = System.Drawing.Color.Transparent;
+            this.lblStatus.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(4)))), ((int)(((byte)(76)))));
+            this.lblStatus.Location = new System.Drawing.Point(571, 400);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(115, 27);
+            this.lblStatus.TabIndex = 20;
+            this.lblStatus.Text = "STATUS: ";
+            this.lblStatus.Visible = false;
             // 
-            // lblLabAssistant
+            // btnDone
             // 
-            this.lblLabAssistant.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblLabAssistant.AutoSize = true;
-            this.lblLabAssistant.ForeColor = System.Drawing.Color.Red;
-            this.lblLabAssistant.Location = new System.Drawing.Point(628, 203);
-            this.lblLabAssistant.Name = "lblLabAssistant";
-            this.lblLabAssistant.Size = new System.Drawing.Size(27, 16);
-            this.lblLabAssistant.TabIndex = 16;
-            this.lblLabAssistant.Text = "red";
-            // 
-            // tbFirstname
-            // 
-            this.tbFirstname.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbFirstname.Location = new System.Drawing.Point(159, 210);
-            this.tbFirstname.Name = "tbFirstname";
-            this.tbFirstname.Size = new System.Drawing.Size(267, 28);
-            this.tbFirstname.TabIndex = 18;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(4)))), ((int)(((byte)(76)))));
-            this.label9.Location = new System.Drawing.Point(15, 210);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(78, 22);
-            this.label9.TabIndex = 17;
-            this.label9.Text = "Firstname:";
-            // 
-            // btnBack
-            // 
-            this.btnBack.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnBack.Font = new System.Drawing.Font("Arial Narrow", 8F);
-            this.btnBack.Location = new System.Drawing.Point(47, 413);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(75, 25);
-            this.btnBack.TabIndex = 17;
-            this.btnBack.Text = "Back";
-            this.btnBack.UseVisualStyleBackColor = true;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnEdit.Font = new System.Drawing.Font("Arial Narrow", 8F);
-            this.btnEdit.Location = new System.Drawing.Point(376, 68);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 25);
-            this.btnEdit.TabIndex = 19;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnSave.Font = new System.Drawing.Font("Arial Narrow", 8F);
-            this.btnSave.Location = new System.Drawing.Point(350, 370);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 25);
-            this.btnSave.TabIndex = 20;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Visible = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // tbDepartment
-            // 
-            this.tbDepartment.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbDepartment.Location = new System.Drawing.Point(159, 316);
-            this.tbDepartment.Name = "tbDepartment";
-            this.tbDepartment.Size = new System.Drawing.Size(267, 28);
-            this.tbDepartment.TabIndex = 24;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(4)))), ((int)(((byte)(76)))));
-            this.label1.Location = new System.Drawing.Point(15, 321);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 22);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "Department:";
-            // 
-            // tbMiddlename
-            // 
-            this.tbMiddlename.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbMiddlename.Location = new System.Drawing.Point(158, 263);
-            this.tbMiddlename.Name = "tbMiddlename";
-            this.tbMiddlename.Size = new System.Drawing.Size(267, 28);
-            this.tbMiddlename.TabIndex = 22;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(4)))), ((int)(((byte)(76)))));
-            this.label4.Location = new System.Drawing.Point(14, 266);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(90, 22);
-            this.label4.TabIndex = 21;
-            this.label4.Text = "Middlename";
-            // 
-            // lblSerialnumber
-            // 
-            this.lblSerialnumber.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblSerialnumber.AutoSize = true;
-            this.lblSerialnumber.Font = new System.Drawing.Font("Arial Narrow", 8F);
-            this.lblSerialnumber.ForeColor = System.Drawing.Color.Red;
-            this.lblSerialnumber.Location = new System.Drawing.Point(156, 90);
-            this.lblSerialnumber.Name = "lblSerialnumber";
-            this.lblSerialnumber.Size = new System.Drawing.Size(24, 17);
-            this.lblSerialnumber.TabIndex = 20;
-            this.lblSerialnumber.Text = "red";
-            // 
-            // lblItem
-            // 
-            this.lblItem.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblItem.AutoSize = true;
-            this.lblItem.Font = new System.Drawing.Font("Arial Narrow", 8F);
-            this.lblItem.ForeColor = System.Drawing.Color.Red;
-            this.lblItem.Location = new System.Drawing.Point(156, 142);
-            this.lblItem.Name = "lblItem";
-            this.lblItem.Size = new System.Drawing.Size(24, 17);
-            this.lblItem.TabIndex = 25;
-            this.lblItem.Text = "red";
-            // 
-            // lblLast
-            // 
-            this.lblLast.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblLast.AutoSize = true;
-            this.lblLast.Font = new System.Drawing.Font("Arial Narrow", 8F);
-            this.lblLast.ForeColor = System.Drawing.Color.Red;
-            this.lblLast.Location = new System.Drawing.Point(156, 191);
-            this.lblLast.Name = "lblLast";
-            this.lblLast.Size = new System.Drawing.Size(24, 17);
-            this.lblLast.TabIndex = 26;
-            this.lblLast.Text = "red";
-            // 
-            // lblFirst
-            // 
-            this.lblFirst.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblFirst.AutoSize = true;
-            this.lblFirst.Font = new System.Drawing.Font("Arial Narrow", 8F);
-            this.lblFirst.ForeColor = System.Drawing.Color.Red;
-            this.lblFirst.Location = new System.Drawing.Point(156, 239);
-            this.lblFirst.Name = "lblFirst";
-            this.lblFirst.Size = new System.Drawing.Size(24, 17);
-            this.lblFirst.TabIndex = 27;
-            this.lblFirst.Text = "red";
-            // 
-            // lblMiddle
-            // 
-            this.lblMiddle.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblMiddle.AutoSize = true;
-            this.lblMiddle.Font = new System.Drawing.Font("Arial Narrow", 8F);
-            this.lblMiddle.ForeColor = System.Drawing.Color.Red;
-            this.lblMiddle.Location = new System.Drawing.Point(156, 291);
-            this.lblMiddle.Name = "lblMiddle";
-            this.lblMiddle.Size = new System.Drawing.Size(24, 17);
-            this.lblMiddle.TabIndex = 28;
-            this.lblMiddle.Text = "red";
-            // 
-            // lblDepartment
-            // 
-            this.lblDepartment.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblDepartment.AutoSize = true;
-            this.lblDepartment.Font = new System.Drawing.Font("Arial Narrow", 8F);
-            this.lblDepartment.ForeColor = System.Drawing.Color.Red;
-            this.lblDepartment.Location = new System.Drawing.Point(156, 344);
-            this.lblDepartment.Name = "lblDepartment";
-            this.lblDepartment.Size = new System.Drawing.Size(24, 17);
-            this.lblDepartment.TabIndex = 29;
-            this.lblDepartment.Text = "red";
+            this.btnDone.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnDone.Font = new System.Drawing.Font("Arial Narrow", 8F);
+            this.btnDone.Location = new System.Drawing.Point(672, 436);
+            this.btnDone.Name = "btnDone";
+            this.btnDone.Size = new System.Drawing.Size(75, 25);
+            this.btnDone.TabIndex = 21;
+            this.btnDone.Text = "OK";
+            this.btnDone.UseVisualStyleBackColor = true;
+            this.btnDone.Visible = false;
+            this.btnDone.Click += new System.EventHandler(this.btnDone_Click);
             // 
             // UpdateBorrowerForm
             // 
@@ -521,7 +552,7 @@
         private System.Windows.Forms.Label lblLastname;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblRemark;
         private System.Windows.Forms.Label lblLabAssistant;
         private System.Windows.Forms.Label lblHead;
@@ -540,5 +571,7 @@
         private System.Windows.Forms.Label lblDepartment;
         private System.Windows.Forms.Label lblMiddle;
         private System.Windows.Forms.Label lblFirst;
+        private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.Button btnDone;
     }
 }
